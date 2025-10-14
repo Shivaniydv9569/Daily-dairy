@@ -274,7 +274,12 @@ footer {
 <div class="buttons-container">
     <script>
         for(let i=1; i<=19; i++){
-            document.write(`<button onclick="showReport(${i}, this)">Day ${i}</button>`);
+            if(i === 1){
+                // Day 1 opens separate HTML file
+                document.write(`<button onclick="window.location.href='day1.html'">Day 1</button>`);
+            } else {
+                document.write(`<button onclick="showReport(${i}, this)">Day ${i}</button>`);
+            }
         }
     </script>
 </div>
@@ -299,13 +304,16 @@ footer {
 </footer>
 
 <script>
-// Reports object remains unchanged, just training name updated in context
-// Replace "AI/ML" mentions with "Web Development" if necessary
-// Day 1-19 reports can stay as they are or be updated for Web Development content
+// Sample reports object for demonstration (Day 2-19)
+const reports = {
+    2: "Day 2 report content goes here...",
+    3: "Day 3 report content goes here...",
+    // Add all other days here
+};
 
 function showReport(day, btn) {
     document.getElementById('report-section').style.display = 'flex';
-    document.getElementById('report').innerText = reports[day];
+    document.getElementById('report').innerText = reports[day] || "No report available for this day.";
     document.getElementById('special-section').style.display = 'none';
     const buttons = document.querySelectorAll('.buttons-container button');
     buttons.forEach(b => b.classList.remove('active'));
