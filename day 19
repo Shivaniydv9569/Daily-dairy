@@ -1,0 +1,23 @@
+#final project RESTAURANT MANAGEMNET SYSTEM
+#defining grocery store management system
+print("WELCOME TO OUR STORE")
+print("displaying the menu :")
+menu={
+    'rice':50,
+    'pulse':90,
+    'floor':40,
+    'milk':32,
+    'oil':160,
+    'spices':50,
+    'vegies':80,
+}
+print("what do you want :")
+print("rice:Rs.50\npulse:Rs.90\nfloor:Rs.40\nmilk:Rs.32\noil:Rs.160\nspices:Rs.50\nvegies:Rs.80")
+choice_1=input("enter your choice from menu : ")
+total_cost=0
+if choice_1 in menu:
+    print(f"your choice {choice_1} is added")
+    total_cost+=menu[choice_1]
+else:
+    print("please enter choice from menu!!")
+print(f"your total cost is {total_cost} ")
