@@ -1,0 +1,10 @@
+# 🗓️ Day 14 - DOM Manipulation
+## Topics Covered
+- getElementById, querySelector
+- Changing text, styles dynamically
+
+## Practical Work
+- Built a dynamic greeting page using DOM.
+
+## Learning Outcome
+Understood how JS interacts with HTML content.
