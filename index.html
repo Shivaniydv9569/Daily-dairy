@@ -83,114 +83,11 @@ body {
     background: rgba(0,0,0,0.2);
 }
 
-.report-card {
-    background: #ffffffee;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-    padding: 40px 50px;
-    max-width: 1000px;
+.report-container iframe {
     width: 100%;
-    overflow-y: auto;
-    max-height: 80vh;
-    transition: all 0.5s ease;
-}
-
-/* Scrollbar Styling */
-.report-card::-webkit-scrollbar {
-    width: 12px;
-}
-
-/* Top Buttons */
-.top-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    padding: 20px;
-    background: rgba(255,255,255,0.1);
-    flex-wrap: wrap;
-}
-
-.top-buttons button {
-    padding: 12px 25px;
+    height: 80vh;
     border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: 600;
-    color: white;
-    cursor: pointer;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-    transition: 0.3s;
-}
-.top-buttons button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-}
-
-/* Different colors */
-.certificate-btn { background: linear-gradient(45deg, #ff7e5f, #feb47b); }
-.project-btn { background: linear-gradient(45deg, #43cea2, #185a9d); }
-.final-btn { background: linear-gradient(45deg, #ff6a00, #ee0979); }
-
-/* Special Section */
-.special-section {
-    display: none;
-    justify-content: center;
-    padding: 40px 30px;
-    min-height: 300px;
-    background: rgba(255,255,255,0.95);
-    margin: 20px 30px;
     border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-    transition: all 0.5s ease;
-    flex-direction: column;
-}
-
-.special-section img {
-    max-width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-.special-section a {
-    color: #2575fc;
-    font-weight: 600;
-    text-decoration: none;
-}
-.special-section a:hover {
-    text-decoration: underline;
-}
-
-.report-card::-webkit-scrollbar-track {
-    background: #f0f0f0;
-    border-radius: 6px;
-}
-.report-card::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 6px;
-}
-.report-card::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
-
-/* Report Typography */
-.report-card h2 {
-    font-size: 24px;
-    color: #2575fc;
-    margin-bottom: 20px;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-bottom: 2px solid #2575fc;
-    padding-bottom: 8px;
-}
-.report-card p {
-    font-size: 17px;
-    line-height: 1.9;
-    color: #333;
-    margin-bottom: 20px;
-    text-align: justify;
-}
-.report-card p strong {
-    color: #6a11cb;
 }
 
 /* Footer */
@@ -202,57 +99,6 @@ footer {
     background: rgba(255,255,255,0.8);
     box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
 }
-
-/* Smooth Fade-in */
-.report-card.show {
-    animation: fadeIn 0.6s ease;
-}
-
-@keyframes fadeIn {
-    0% { opacity: 0; transform: translateY(20px);}
-    100% { opacity: 1; transform: translateY(0);}
-}
-
-.link-button {
-    display: inline-block;
-    padding: 10px 25px;
-    margin: auto;
-    background: #4facfe;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-size: 16px;
-    width: 80px;
-    font-weight: 600;
-    transition: background 0.3s, transform 0.3s;
-}
-.link-button:hover {
-    background: #2575fc;
-    transform: translateY(-2px);
-}
-.user-details p {
-    margin: 5px 0;
-    font-weight: 600;
-    color: #333;
-}
-.user-details hr {
-    margin: 10px 0 20px;
-    border: 1px solid #2575fc;
-}
-.user-info {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 15px 20px;
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
-    z-index: 200;
-    font-weight: 600;
-    color: #333;
-    max-width: 200px;
-}
-.user-info p { margin: 5px 0; }
 </style>
 </head>
 <body>
@@ -262,98 +108,55 @@ footer {
     <h1>Daily Diary - Web Development</h1>
 </div>
 
-<!-- Top Buttons -->
-<div class="top-buttons">
-    <button class="project-btn" onclick="showProject()">Project</button>
-    <button class="final-btn" onclick="showFinalReport()">Final Report</button>
-</div>
-
-<a href="https://drive.google.com/file/d/145MOSfTLW0PQxxg4S35HHzdn6kV3NAWA/view?usp=share_link" target="_blank" class="link-button">Certificate</a>
-
-<!-- Daily Buttons -->
-<div class="buttons-container">
+<!-- Day Buttons -->
+<div class="buttons-container" id="buttons-container">
     <script>
         for(let i=1; i<=19; i++){
-            if(i === 1){
-                // Day 1 opens separate HTML file
-                document.write(`<button onclick="window.location.href='day1.html'">Day 1</button>`);
-            } else {
-                document.write(`<button onclick="showReport(${i}, this)">Day ${i}</button>`);
-            }
+            document.write(`<button onclick="showDay(${i}, this)">Day ${i}</button>`);
         }
     </script>
 </div>
 
-<!-- Daily Report Section -->
-<div class="report-container" id="report-section">
-    <div class="report-card" id="report">
-        <div class="user-details">
-            <p><strong>Name:</strong> Shivani</p>
-            <p><strong>Class:</strong> CSE D2</p>
-            <p><strong>URN:</strong> 2302671</p>
-            <hr>
-        </div>
-        <p>Select a day to view the report.</p>
-    </div>
+<!-- Report / Embedded HTML -->
+<div class="report-container">
+    <iframe id="report-frame" src=""></iframe>
 </div>
-
-<div class="special-section" id="special-section"></div>
 
 <footer>
     Name: Shivani | URN: 2302671 | CLASS: CSE D2 | Web Development Training Report
 </footer>
 
 <script>
-// Sample reports object for demonstration (Day 2-19)
-const reports = {
-    2: "Day 2 report content goes here...",
-    3: "Day 3 report content goes here...",
-    // Add all other days here
+// Map days to corresponding HTML files
+const dayFiles = {
+    1: "day1.html",
+    2: "day2.html",
+    3: "day3.html",
+    4: "day4.html",
+    5: "day5.html",
+    6: "day6.html",
+    7: "day7.html",
+    8: "day8.html",
+    9: "day9.html",
+    10: "day10.html",
+    11: "day11.html",
+    12: "day12.html",
+    13: "day13.html",
+    14: "day14.html",
+    15: "day15.html",
+    16: "day16.html",
+    17: "day17.html",
+    18: "day18.html",
+    19: "day19.html"
 };
 
-function showReport(day, btn) {
-    document.getElementById('report-section').style.display = 'flex';
-    document.getElementById('report').innerText = reports[day] || "No report available for this day.";
-    document.getElementById('special-section').style.display = 'none';
+function showDay(day, btn) {
     const buttons = document.querySelectorAll('.buttons-container button');
     buttons.forEach(b => b.classList.remove('active'));
-    if(btn) btn.classList.add('active');
-}
+    btn.classList.add('active');
 
-function showCertificate() {
-    document.getElementById('report-section').style.display = 'none';
-    const special = document.getElementById('special-section');
-    special.style.display = 'flex';
-    special.innerHTML = `
-        <a href="https://drive.google.com/file/d/145MOSfTLW0PQxxg4S35HHzdn6kV3NAWA/view?usp=share_link" target="_blank" class="special-link">
-            <h2>Certificate</h2>
-            <p>Click here to view/download the certificate</p>
-        </a>
-    `;
-}
-
-function showProject() {
-    document.getElementById('report-section').style.display = 'none';
-    const special = document.getElementById('special-section');
-    special.style.display = 'flex';
-    special.innerHTML = `
-        <a href="https://github.com/VanshKhurma/Project-" target="_blank" class="special-link">
-            <h2>Project</h2>
-            <p>Click here to view the project on GitHub</p>
-        </a>
-    `;
-}
-
-function showFinalReport() {
-    document.getElementById('report-section').style.display = 'none';
-    const special = document.getElementById('special-section');
-    special.style.display = 'flex';
-    special.innerHTML = `
-        <a href="https://drive.google.com/file/d/1gJjYjSrIV8UiY2N_Qw3VppHWlx4SheKC/view?usp=sharing" target="_blank" class="special-link">
-            <h2>Final Report</h2>
-            <p>Click here to view the consolidated training report (download/view).</p>
-        </a>
-    `;
+    const iframe = document.getElementById('report-frame');
+    iframe.src = dayFiles[day] || "";
 }
 </script>
 
