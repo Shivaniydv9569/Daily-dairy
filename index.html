@@ -3,161 +3,110 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Daily Diary - Web Development Training</title>
+<title>Daily Diary - Web Development</title>
 <style>
-/* Global Styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    background-image: url('https://www.gndec.ac.in/gndec/2023/alumni_home.jpeg');
+    background-image: url('https://www.gndec.ac.in/gndec/images/gndec.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    color: #333;
 }
-
-/* Navbar */
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: linear-gradient(90deg, #4facfe, #00f2fe);
+header {
+    background: #00c6ff;
+    padding: 15px;
     color: white;
-    padding: 15px 30px;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
 }
-.navbar img {
-    height: 50px;
-    margin-right: 20px;
+.nav-buttons {
+    text-align: center;
+    margin: 15px 0;
 }
-.navbar h1 {
-    font-size: 28px;
-    margin: 0;
-    letter-spacing: 1px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-}
-
-/* Buttons */
-.buttons-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    padding: 20px 25px;
-    justify-content: center;
-}
-.buttons-container button {
-    padding: 12px 22px;
+.nav-buttons button {
+    margin: 5px;
+    padding: 10px 15px;
     border: none;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    border-radius: 8px;
     color: white;
     cursor: pointer;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: 600;
-    transition: 0.4s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    font-weight: bold;
 }
-.buttons-container button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+.nav-buttons .day-btn {
+    background: linear-gradient(to right, #5f2c82, #49a09d);
 }
-.buttons-container button.active {
-    background: linear-gradient(135deg, #ff416c, #ff4b2b);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.35);
-}
-
-/* Report Section */
-.report-container {
-    flex: 1;
-    padding: 30px 40px;
-    display: flex;
-    justify-content: center;
-    background: rgba(0,0,0,0.2);
-}
-
-.report-container iframe {
-    width: 100%;
-    height: 80vh;
-    border: none;
-    border-radius: 15px;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 15px 10px;
-    font-size: 14px;
-    color: #333;
-    background: rgba(255,255,255,0.8);
-    box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
+.nav-buttons .project-btn { background: linear-gradient(to right, #11998e, #38ef7d);}
+.nav-buttons .report-btn { background: linear-gradient(to right, #ff416c, #ff4b2b);}
+.nav-buttons .certificate-btn { background: linear-gradient(to right, #2193b0, #6dd5ed);}
+.content {
+    max-width: 900px;
+    margin: 20px auto;
+    background: rgba(255,255,255,0.9);
+    padding: 25px;
+    border-radius: 10px;
+    min-height: 300px;
 }
 </style>
 </head>
 <body>
+<header>Daily Diary - Web Development</header>
 
-<div class="navbar">
-    <img src="https://gndec.ac.in/ncist2025/res/images/logos/light.png" alt="Logo">
-    <h1>Daily Diary - Web Development</h1>
+<div class="nav-buttons">
+    <button class="project-btn">Project</button>
+    <button class="report-btn">Final Report</button>
+    <button class="certificate-btn">Certificate</button>
+    <br>
+    <!-- Day buttons -->
+    <button class="day-btn" data-file="day1.html">Day 1</button>
+    <button class="day-btn" data-file="day2.html">Day 2</button>
+    <button class="day-btn" data-file="day3.html">Day 3</button>
+    <button class="day-btn" data-file="day4.html">Day 4</button>
+    <button class="day-btn" data-file="day5.html">Day 5</button>
+    <button class="day-btn" data-file="day6.html">Day 6</button>
+    <button class="day-btn" data-file="day7.html">Day 7</button>
+    <button class="day-btn" data-file="day8.html">Day 8</button>
+    <button class="day-btn" data-file="day9.html">Day 9</button>
+    <button class="day-btn" data-file="day10.html">Day 10</button>
+    <button class="day-btn" data-file="day11.html">Day 11</button>
+    <button class="day-btn" data-file="day12.html">Day 12</button>
+    <button class="day-btn" data-file="day13.html">Day 13</button>
+    <button class="day-btn" data-file="day14.html">Day 14</button>
+    <button class="day-btn" data-file="day15.html">Day 15</button>
+    <button class="day-btn" data-file="day16.html">Day 16</button>
+    <button class="day-btn" data-file="day17.html">Day 17</button>
+    <button class="day-btn" data-file="day18.html">Day 18</button>
+    <button class="day-btn" data-file="day19.html">Day 19</button>
 </div>
 
-<!-- Day Buttons -->
-<div class="buttons-container" id="buttons-container">
-    <script>
-        for(let i=1; i<=19; i++){
-            document.write(`<button onclick="showDay(${i}, this)">Day ${i}</button>`);
-        }
-    </script>
+<div class="content" id="content">
+    <p><strong>Name:</strong> Shivani</p>
+    <p><strong>Class:</strong> CSE D2</p>
+    <p><strong>URN:</strong> 2302671</p>
+    <hr>
+    <p>Select a day to view the report.</p>
 </div>
-
-<!-- Report / Embedded HTML -->
-<div class="report-container">
-    <iframe id="report-frame" src=""></iframe>
-</div>
-
-<footer>
-    Name: Shivani | URN: 2302671 | CLASS: CSE D2 | Web Development Training Report
-</footer>
 
 <script>
-// Map days to corresponding HTML files
-const dayFiles = {
-    1: "day1.html",
-    2: "day2.html",
-    3: "day3.html",
-    4: "day4.html",
-    5: "day5.html",
-    6: "day6.html",
-    7: "day7.html",
-    8: "day8.html",
-    9: "day9.html",
-    10: "day10.html",
-    11: "day11.html",
-    12: "day12.html",
-    13: "day13.html",
-    14: "day14.html",
-    15: "day15.html",
-    16: "day16.html",
-    17: "day17.html",
-    18: "day18.html",
-    19: "day19.html"
-};
+const contentDiv = document.getElementById('content');
+const dayButtons = document.querySelectorAll('.day-btn');
 
-function showDay(day, btn) {
-    const buttons = document.querySelectorAll('.buttons-container button');
-    buttons.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-
-    const iframe = document.getElementById('report-frame');
-    iframe.src = dayFiles[day] || "";
-}
+dayButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const file = button.getAttribute('data-file');
+        fetch(file)
+        .then(response => {
+            if (!response.ok) throw new Error('File not found');
+            return response.text();
+        })
+        .then(html => {
+            contentDiv.innerHTML = html;
+        })
+        .catch(err => {
+            contentDiv.innerHTML = `<p style="color:red;">${err.message}</p>`;
+        });
+    });
+});
 </script>
 
 </body>
